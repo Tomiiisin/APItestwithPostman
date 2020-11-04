@@ -1,0 +1,209 @@
+{
+	"info": {
+		"_postman_id": "79571492-35c4-46e0-a695-906a3894ec16",
+		"name": "RBP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get room",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2c2501c7-ab41-43e7-abe1-96f9fc54bf05",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://automationintesting.online/report/room/6",
+					"protocol": "https",
+					"host": [
+						"automationintesting",
+						"online"
+					],
+					"path": [
+						"report",
+						"room",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Book a room",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a9acb44b-1982-4f06-b04c-235691246ead",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"pm.test(\"Tomi\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Tomi\");\r",
+							"});\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "702e9cc6-aab9-4643-ae1b-6f2b5ee2a88a",
+						"exec": [
+							"var number = Math.floor(Math.random() * 100);\r",
+							"\r",
+							"var roomid = '1' + number;\r",
+							"pm.environment.set(\"roomid\", roomid);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"bookingdates\": {\r\n        \"checkin\": \"2020-10-21\",\r\n        \"checkout\": \"2020-10-24\"\r\n    },\r\n    \"depositpaid\": false,\r\n    \"firstname\": \"Tomihhh\",\r\n    \"lastname\": \"Onabajooo\",\r\n    \"roomid\": {{roomid}},\r\n    \"email\": \"tomibajooo@gmail.com\",\r\n    \"phone\": \"07068487635\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://team3.automationintesting.online/booking/",
+					"protocol": "https",
+					"host": [
+						"team3",
+						"automationintesting",
+						"online"
+					],
+					"path": [
+						"booking",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Book a room with an already existing details",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a9acb44b-1982-4f06-b04c-235691246ead",
+						"exec": [
+							"pm.test(\"Status code is 409\", function () {\r",
+							"    pm.response.to.have.status(409);\r",
+							"\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"bookingdates\": {\r\n        \"checkin\": \"2020-10-23\",\r\n        \"checkout\": \"2020-11-01\"\r\n    },\r\n    \"depositpaid\": false,\r\n    \"firstname\": \"Tomiuuu\",\r\n    \"lastname\": \"Onabajoi\",\r\n    \"roomid\": 5,\r\n    \"email\": \"tomibajooo@gmail.com\",\r\n    \"phone\": \"07068487635\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://automationintesting.online/booking/",
+					"protocol": "https",
+					"host": [
+						"automationintesting",
+						"online"
+					],
+					"path": [
+						"booking",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Book a room with a checkout date earlier than the check in date",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a9acb44b-1982-4f06-b04c-235691246ead",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"pm.test(\"Tomi\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Tomi\");\r",
+							"});\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "702e9cc6-aab9-4643-ae1b-6f2b5ee2a88a",
+						"exec": [
+							"var number = Math.floor(Math.random() * 100);\r",
+							"\r",
+							"var roomid = '1' + number;\r",
+							"pm.environment.set(\"roomid\", roomid);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"bookingdates\": {\r\n        \"checkin\": \"2020-11-13\",\r\n        \"checkout\": \"2020-11-01\"\r\n    },\r\n    \"depositpaid\": false,\r\n    \"firstname\": \"Tomiuuu\",\r\n    \"lastname\": \"Onabajoi\",\r\n    \"roomid\": {{roomid}},\r\n    \"email\": \"tomibajooo@gmail.com\",\r\n    \"phone\": \"07068487635\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://automationintesting.online/booking/",
+					"protocol": "https",
+					"host": [
+						"automationintesting",
+						"online"
+					],
+					"path": [
+						"booking",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
