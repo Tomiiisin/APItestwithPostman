@@ -313,7 +313,7 @@
       "id": "11927df8-f90b-49da-ace8-7675ca7cbfa5"
     },
     {
-      "name": "New Folder",
+      "name": "Patch Request",
       "item": [],
       "id": "5ef8ea65-7070-4455-a441-17ef4c6b15ec"
     }
@@ -342,7 +342,7 @@
   ],
   "variable": [
     {
-      "id": "28d1636c-ed5a-4277-a5d8-ce394af6b77b",
+      "id": "e0f51243-ab6a-4f0b-9068-ca5ebe9722b9",
       "key": "baseurl",
       "value": "https://restful-booker.herokuapp.com",
       "type": "string"
