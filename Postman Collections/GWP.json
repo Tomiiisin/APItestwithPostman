@@ -32,7 +32,7 @@
               }
             }
           ],
-          "_postman_id": "c8de8be1-6f02-4f72-8f94-bf1035d1fcb5",
+          "id": "c8de8be1-6f02-4f72-8f94-bf1035d1fcb5",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
           },
@@ -44,7 +44,7 @@
           "response": []
         }
       ],
-      "_postman_id": "e507db27-1390-4be1-bb79-17a966739b48"
+      "id": "e507db27-1390-4be1-bb79-17a966739b48"
     },
     {
       "name": "Create Booking",
@@ -91,7 +91,7 @@
               }
             }
           ],
-          "_postman_id": "a9ba9476-40bd-46cb-8d67-eec82385e043",
+          "id": "a9ba9476-40bd-46cb-8d67-eec82385e043",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
           },
@@ -129,7 +129,7 @@
               }
             }
           ],
-          "_postman_id": "eb7a87dc-aa8a-455f-a40d-5a9c5616768f",
+          "id": "eb7a87dc-aa8a-455f-a40d-5a9c5616768f",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
           },
@@ -181,7 +181,7 @@
               }
             }
           ],
-          "_postman_id": "187e1312-22f6-4d92-b021-0899fca915d3",
+          "id": "187e1312-22f6-4d92-b021-0899fca915d3",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
           },
@@ -243,7 +243,7 @@
               }
             }
           ],
-          "_postman_id": "a8ec18e1-2b6c-4ec9-b01f-83e2be852602",
+          "id": "a8ec18e1-2b6c-4ec9-b01f-83e2be852602",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
           },
@@ -264,7 +264,7 @@
           "response": []
         }
       ],
-      "_postman_id": "a3ddafb5-28f2-478a-96c4-b50b5e4b85c8"
+      "id": "a3ddafb5-28f2-478a-96c4-b50b5e4b85c8"
     },
     {
       "name": "Get Token",
@@ -289,7 +289,7 @@
               }
             }
           ],
-          "_postman_id": "3052c0a5-8e2e-4554-bb47-406472c1f40a",
+          "id": "3052c0a5-8e2e-4554-bb47-406472c1f40a",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
           },
@@ -310,7 +310,12 @@
           "response": []
         }
       ],
-      "_postman_id": "11927df8-f90b-49da-ace8-7675ca7cbfa5"
+      "id": "11927df8-f90b-49da-ace8-7675ca7cbfa5"
+    },
+    {
+      "name": "New Folder",
+      "item": [],
+      "id": "5ef8ea65-7070-4455-a441-17ef4c6b15ec"
     }
   ],
   "event": [
@@ -337,7 +342,7 @@
   ],
   "variable": [
     {
-      "id": "d1cc6e89-6de2-416d-860b-d0b3fbb5cac5",
+      "id": "28d1636c-ed5a-4277-a5d8-ce394af6b77b",
       "key": "baseurl",
       "value": "https://restful-booker.herokuapp.com",
       "type": "string"
